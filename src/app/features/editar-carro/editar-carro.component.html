@@ -1,0 +1,38 @@
+<h2>Editar Carro</h2>
+<form>
+    <div class="form-group">
+        <label for="marcaCarro">Marca del Carro</label>
+        <input name="nombre" type="text" class="form-control" id="marcaCarro"
+        placeholder="Ingrese la Marca del Carro" [(ngModel)]="carro.marca">
+    </div>
+    <div class="form-group">
+        <label for="modeloCarro">Modelo del Carro</label>
+        <input name="nombre" type="text" class="form-control" id="modeloCarro"
+        placeholder="Ingrese el Modelo del Carro" [(ngModel)]="carro.modelo">
+    </div>
+    <div class="form-group">
+        <label for="colorCarro">color del Carro</label>
+        <input name="nombre" type="text" class="form-control" id="colorCarro"
+        placeholder="Ingrese el Color del Carro" [(ngModel)]="carro.color">
+    </div>
+    <div class="form-group">
+        <label for="detalleCarroControlSelect">Selecionar el año del carro</label>
+        <select name="nombreCurso" class="form-control" id="detalleCarroControlSelect" [(ngModel)]="carro.detalleCarroid">
+        <option *ngFor="let detalleCarro of detalleCarro" [value]="detalleCarro.id">{{detalleCarro.fecha}}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="detalleCarroControlSelect">Selecionar el motor del carro</label>
+        <select name="nombreCurso" class="form-control" id="detalleCarroControlSelect" [(ngModel)]="carro.detalleCarroid">
+        <option *ngFor="let detalleCarro of detalleCarro" [value]="detalleCarro.id">{{detalleCarro.motor}}</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="detalleCarroControlSelect">Selecionar el Cilindraje del carro</label>
+        <select name="nombreCurso" class="form-control" id="detalleCarroControlSelect" [(ngModel)]="carro.detalleCarroid">
+        <option *ngFor="let detalleCarro of detalleCarro" [value]="detalleCarro.id">{{detalleCarro.cilindraje}}</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="editarCarro()">Guardar</button>
+    <button type="submit" class="btn btn-ligth" (click)="cancelar()">Cancelar</button>
+</form>

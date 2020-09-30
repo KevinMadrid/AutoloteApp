@@ -1,0 +1,30 @@
+<h1>Listado de los Detalles de los Carros</h1>
+<button type ="button" class="btn btn-success mb-2" (click)="crearDetalleCarro()"><i class="fas fa-plus"></i>
+    Crear</button>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Año</th>
+            <th scope="col">Motor</th>
+            <th scope="col">Cilindraje</th>
+            <th scope="col">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+       <tr *ngFor="let detalleCarro of detallesCarro">
+            <th scope="row">{{detalleCarro.id}}</th>
+            <td>{{detalleCarro.fecha}}</td>
+            <td>{{detalleCarro.motor}}</td>
+            <td>{{detalleCarro.cilindraje}}</td>
+            <td>
+                <div class="btn-group" role="group">
+                <button type="button" class="btn btn-info"(click)="editarDetalleCarro(detalleCarro.id)" >
+                <i class="fas fa-pencil-alt"></i></button>
+                <button type="button" class="btn btn-danger"(click)="eliminarDetalleCarro(detalleCarro.id)" > 
+                <i class="fas fa-trash-alt"></i></button>       
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
